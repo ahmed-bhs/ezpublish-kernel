@@ -7,7 +7,7 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0885c0ce-4b9f-4b89-aa9c-e8f9f7a315e0/big.png)](https://insight.sensiolabs.com/projects/0885c0ce-4b9f-4b89-aa9c-e8f9f7a315e0)
 
 Welcome to the *eZ Platform Kernel*. It is the heart of *eZ Platform*, a modern CMS built on top of the Symfony (Full Stack) Framework.
-It contains an advanced Content Model, allowing you to structure any kind of content or content-like data in a future-proof Content Repository. The eZ Platform also aims to provide additional features for the MVC layer (Symfony) to increase your productivity.
+It contains an advanced Content Model, allowing you to structure any kind of content or content-like data in a future-proof Content Repository. eZ Platform Kernel also aims to provide additional features for the MVC layer (Symfony) to increase your productivity.
 
 This code repository contains several layers of (and implementations of) APIs. *Kernel* refers to this being the core,
 as opposed to the *Full Stack* which has bundles, user interfaces, and installers, all configured to make a complete application.
@@ -18,9 +18,9 @@ as opposed to the *Full Stack* which has bundles, user interfaces, and installer
 ## What is eZ Platform?
 
 *eZ Platform* is modern, self-sufficient CMS/CMF, and it can be used to meet needs of developers and editorial teams. It has been in development since 2011.
-Current eZ Platform v2 is the 7th generation of eZ Publish, it is built on top of the Symfony 3.4LTS framework (Full Stack). 
+Current eZ Platform v2 is the 7th generation of the product (previously named eZ Publish). It is built on top of the Symfony 3.4LTS framework (Full Stack). 
 
-### Getting a Full Install (*Full Stack*)
+### Getting a Full Installation (*Full Stack*)
 
 Reflecting what is described above there are several options to get a full install of this Kernel:
 
