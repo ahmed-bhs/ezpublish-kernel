@@ -22,11 +22,11 @@ Current eZ Platform v2 is the 7th generation of eZ Publish, it is built on top o
 
 ### Getting a Full Install (*Full Stack*)
 
-Reflecting what is described above there are several options to get a full install of this Kernel, see:
+Reflecting what is described above there are several options to get a full install of this Kernel:
 
 - [eZ Platform](https://github.com/ezsystems/ezplatform): For a clean install of eZ Platform, a modern Symfony CMS.
 - [eZ Platform demo](https://github.com/ezsystems/ezplatform-demo): A demo website of eZ Platform, as an example for how to get started.
-- [eZ Platform Enterprise Edition](https://github.com/ezsystems/ezplatform-ee) A commercial distribution of eZ Platform that provides additional features and services aimed at editors, editorial teams, and larger organizations.
+- [eZ Platform Enterprise Edition](https://github.com/ezsystems/ezplatform-ee): A commercial distribution of eZ Platform that provides additional features and services aimed at editors, editorial teams, and larger organizations.
 
 
 ## Overview of the Kernel
@@ -40,7 +40,7 @@ as separate *(sub-tree split)* packages for re-usability. As is the case with [S
 
 ### Current Organization
 
-In the doc folder you'll find [Specifications](doc/specifications/) for most features.
+In the doc folder, you'll find [Specifications](doc/specifications/) for most features.
 
 MVC layer:
 - [eZ/Bundle](eZ/Bundle/) - the bundles that are important to expose the functionality of the Backend and MVC layer to Symfony.
@@ -50,7 +50,7 @@ MVC layer:
 
 Backend:
 - [eZ/Publish/API](eZ/Publish/API/) - the definition of stable interfaces for the PHP *Public* API, mainly Content *Repository API*.
-- [eZ/Publish/SPI](eZ/Publish/SPI/)  - Service Provider Interfaces, *not yet frozen*.
+- [eZ/Publish/SPI](eZ/Publish/SPI/) - Service Provider Interfaces, *not yet frozen*.
 - [eZ/Publish/Core](eZ/Publish/Core/) - implementations of both APIs and SPIs; the naming aims to map to name of the interface they implement. For example, `Core\Persistence\Legacy` being implementation of `SPI\Persistence`.
 
 
@@ -93,7 +93,7 @@ For Contributing to this Bundle, you should make sure to run both unit and integ
 This should produce a result similar to this: [travis](https://travis-ci.org/ezsystems/ezpublish-kernel). If it doesn't, double-check [.travis.yml](.travis.yml) for up-to-date information on how travis is set up.
 
 ## Issue Tracker
-Submitting bugs, improvements, and stories is possible in https://jira.ez.no/browse/EZP.
+Submitting bugs, improvements, and stories is possible in [https://jira.ez.no/browse/EZP](https://jira.ez.no/browse/EZP).
 If you discover a security issue, please see how to responsibly report such issues in ["Reporting security issues in eZ Systems products"](https://doc.ezplatform.com/en/latest/guide/reporting_issues/#reporting-security-issues-in-ez-systems-products).
 
 ## Contributing
@@ -106,8 +106,8 @@ Good manners:
   "Implement EZP-201xx: Add support for X in Y"
 * If you want to contribute implementation-specification proposals, place them in the [doc/](doc/) folder.
 * Keep different changes in different commits in case cherry-pick is preferred instead of a merge later.
-  * A Pull Request should only cover one issue.
-  * A commit should not contain code changes at the same time as doing coding standards/whitespace/typo fixes.
+  * A pull request should only cover one issue.
+  * A single commit should not contain code changes along with coding standards/whitespace/typo fixes.
 * TDD: Write/Change the test(s) for your fix and commit it before you do the actual code change.
   * If a bug affects the Public API, write or enhance an integration test to make sure the bug is covered.
   * Unit tests should only use mocks/stubs and never test the full stack like integration tests do.
