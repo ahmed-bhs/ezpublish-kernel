@@ -113,7 +113,7 @@ Good manners:
   * Unit tests should only use mocks/stubs and never test the full stack like integration tests do.
 * Please test/check your commits before pushing even if we have automated checks in pull requests:
   * Run unit tests and integration tests before commits
-  * Make sure you follow our [coding standards](https://github.com/ezsystems/ezplatform-code-style)
+  * Make sure you follow our [coding standards](https://github.com/ezsystems/ezplatform-code-style) by executing `composer fix-cs` before committing your changes to PHP files.
 
 For further information, please have a look at the [related guidance page](https://doc.ezplatform.com/en/latest/community_resources/contributing). You will, among other things, learn how to make pull requests. More on this here: ["Contributing through git"](https://doc.ezplatform.com/en/latest/community_resources/documentation/#contributing-through-git).
 
