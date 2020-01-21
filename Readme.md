@@ -18,7 +18,7 @@ as opposed to the *Full Stack* which has bundles, user interfaces, and installer
 ## What is eZ Platform?
 
 *eZ Platform* is modern, self-sufficient CMS/CMF, and it can be used to meet needs of developers and editorial teams. It has been in development since 2011.
-Current eZ Platform v2 is the 7th generation of the product (previously named eZ Publish). It is built on top of the Symfony 3.4LTS framework (Full Stack). 
+Current eZ Platform is the next generation of the product (previously named eZ Publish). It is built on top of the Symfony framework (Full Stack). 
 
 ### Getting a Full Installation (*Full Stack*)
 
@@ -46,11 +46,11 @@ MVC layer:
 - [eZ/Bundle](eZ/Bundle/) - the bundles that are important to expose the functionality of the Backend and MVC layer to Symfony.
 - [eZ/Publish/Core/MVC](eZ/Publish/Core/MVC/) - the parts that make up the different components extending Symfony.
 - [eZ/Publish/Core/Pagination](eZ/Publish/Core/Pagination/) - a component extending PagerFanta for pagination of eZ Platform search queries.
-- [ezplatform-rest](https://github.com/ezsystems/ezplatform-rest) - a separate repository providing REST server and *prototype* of a REST Client.
 
 Backend:
 - [eZ/Publish/API](eZ/Publish/API/) - the definition of stable interfaces for the PHP *Public* API, mainly Content *Repository API*.
-- [eZ/Publish/SPI](eZ/Publish/SPI/) - Service Provider Interfaces, *not yet frozen*.
+- [eZ/Publish/SPI/Persistence](eZ/Publish/SPI/Persistence/) - a layer which indeed is not frozen yet, meaning it might change in between releases. Those are persistence interfaces for Storage Engine. They can't be frozen yet, because we wouldn't be able to add features to the API (or rather it would be difficult). We need to improve this layer so we can actually give SPI BC promise on it.
+- [eZ/Publish/SPI](eZ/Publish/SPI/)* - (anything other than Persistence) is frozen and has a Backward Compatibility promise of Service Provider Interface, meaning no breaking changes both from consumption and implementation POV.
 - [eZ/Publish/Core](eZ/Publish/Core/) - implementations of both APIs and SPIs; the naming aims to map to name of the interface they implement. For example, `Core\Persistence\Legacy` being implementation of `SPI\Persistence`.
 
 
@@ -59,7 +59,7 @@ Backend:
 This kernel contains a comprehensive set of unit, functional, and integration tests. At the time of writing, 9k unit tests, 8k integration tests, and several functional tests.
 
 **Dependencies**
-* **PHP 5 Modules**: php5\_intl php5\_xsl php5\_gd php5\_sqlite *(aka `pdo\_sqlite`)*
+* **PHP 7 Modules**: php7\_intl php7\_xsl php7\_gd php7\_sqlite *(aka `pdo\_sqlite`)*
 * **Database**: sqlite3, optionally: mysql/postgres *if so make sure to have relevant pdo modules installed*
 
 For Contributing to this Bundle, you should make sure to run both unit and integration tests.
@@ -101,9 +101,9 @@ eZ Platform is an open source project, with code contributions made via GitHub p
 
 Good manners:
 * Remember to first create an issue in our issue tracker and refer to it in commits and pull request headers. For example:
-  "Fix EZP-20104: ContentController should return error status when content is not found"
+  "EZP-20104: Fixed ContentController to return error status when content is not found"
   or
-  "Implement EZP-201xx: Add support for X in Y"
+  "EZP-20105: Added support for X in Y"
 * If you want to contribute implementation-specification proposals, place them in the [doc/](doc/) folder.
 * Keep different changes in different commits in case cherry-pick is preferred instead of a merge later.
   * A pull request should only cover one issue.
