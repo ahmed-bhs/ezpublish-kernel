@@ -296,6 +296,7 @@ EOT
         $processes = array_fill(0, $processCount, null);
         $generator = $this->fetchIteration($stmt, $iterationCount);
         do {
+            /** @var \Symfony\Component\Process\Process $process */
             foreach ($processes as $key => $process) {
                 if ($process !== null && $process->isRunning()) {
                     continue;
@@ -306,7 +307,7 @@ EOT
                     $progress->advance(1);
 
                     if (!$process->isSuccessful()) {
-                        $this->logger->error('Child indexer process returned: ' . $process->getExitCodeText());
+                        $this->logger->error(sprintf('Child indexer process returned: %s - %s', $process->getExitCodeText(), $progress->getOutput()));
                     }
                 }
 
