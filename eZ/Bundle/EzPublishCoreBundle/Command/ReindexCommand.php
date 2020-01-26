@@ -44,6 +44,9 @@ class ReindexCommand extends Command
     private $locationHandler;
 
     /** @var string */
+    private $projectDir;
+
+    /** @var string */
     private $phpPath;
 
     /** @var \Psr\Log\LoggerInterface */
@@ -76,6 +79,7 @@ class ReindexCommand extends Command
         string $siteaccess,
         string $env,
         bool $isDebug,
+        string $projectDir,
         string $phpPath = null
     ) {
         $this->searchIndexer = $searchIndexer;
@@ -86,6 +90,7 @@ class ReindexCommand extends Command
         $this->siteaccess = $siteaccess;
         $this->env = $env;
         $this->isDebug = $isDebug;
+        $this->projectDir = $projectDir;
         $this->phpPath = $phpPath;
 
         parent::__construct();
@@ -413,7 +418,7 @@ EOT
             throw new InvalidArgumentException('--content-ids', '$contentIds cannot be empty');
         }
 
-        $consolePath = file_exists('bin/console') ? 'bin/console' : 'app/console';
+        $consolePath = file_exists(sprintf('%s/bin/console', $this->projectDir)) ? sprintf('%s/bin/console', $this->projectDir) : sprintf('%s/app/console', $this->projectDir);
         $subProcessArgs = [
             $this->getPhpPath(),
             $consolePath,

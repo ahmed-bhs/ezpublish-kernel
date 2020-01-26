@@ -284,5 +284,6 @@ services:
             $siteaccess: '@ezpublish.siteaccess'
             $env: '%kernel.environment%'
             $isDebug: '%kernel.debug%'
+            $projectDir: '%kernel.project_dir%'
         tags:
             - { name: console.command, command: ezplatform:reindex }
